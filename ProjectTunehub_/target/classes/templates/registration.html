@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/free-photo/digital-art-portrait-person-listening-music-headphones_23-2151065092.jpg?t=st=1716631586~exp=1716635186~hmac=47afc11beb489c8b4b1826c4f187583cc812ebfd1156159ebb56f997037cfd8b&w=1060');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            text-align: left;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .radio-group {
+            margin-bottom: 20px;
+        }
+        .radio-group label {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form action="register" method="post">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" required>
+    <br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required>
+    <br><br>
+
+    <div class="radio-group">
+        <label>Gender:</label>
+        <label for="male"><input type="radio" id="male" name="gender" value="male"> Male</label>
+        <label for="female"><input type="radio" id="female" name="gender" value="female"> Female</label>
+        <label for="other"><input type="radio" id="other" name="gender" value="other"> Other</label>
+    </div>
+
+    <div class="radio-group">
+        <label>Role:</label>
+        <label for="admin"><input type="radio" id="admin" name="role" value="admin"> Admin</label>
+        <label for="customer"><input type="radio" id="customer" name="role" value="customer"> Customer</label>
+    </div>
+
+    <label for="address">Address:</label><br>
+    <textarea id="address" name="address" rows="4" required></textarea>
+    <br><br>
+
+    <input type="submit" value="SUBMIT">
+</form>
+
+</body>
+</html>

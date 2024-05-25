@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+	background-image: url('https://img.freepik.com/free-vector/golden-music-notes-background-design_1017-33910.jpg?w=1060&t=st=1716627163~exp=1716627763~hmac=fbc8e6aad41200292e68af77b8658ed4184dfcd6da5bdc846f331277332f71fc');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        audio {
+            width: 100%;
+        }
+        .controls {
+            margin-top: 20px;
+        }
+        .controls button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 0 5px;
+        }
+        .controls button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Song List</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Artist</th>
+                    <th>Genre</th>
+                    <th>Play</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="s:${songs}">
+                    <td th:text="${s.name}"></td>
+                    <td th:text="${s.artist}"></td>
+                    <td th:text="${s.genre}"></td>
+                    <td>
+                        <audio id="audioPlayer" controls>
+                            <source th:src="${s.link}">
+                        </audio>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="controls">
+            <button onclick="document.getElementById('audioPlayer').play()">Play</button>
+            <button onclick="document.getElementById('audioPlayer').pause()">Pause</button>
+        </div>
+    </div>
+</body>
+</html>
